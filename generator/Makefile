@@ -52,7 +52,7 @@ tests_run:	unit_test
 	$(COVR) --exclude $(DIR_TEST) --branch
 
 clean:
-		$(RM) -f $(OBJ)
+		$(RM) -f $(OBJ) $(MAIN_OBJ)
 
 fclean: clean
 		$(RM) -f $(NAME)
