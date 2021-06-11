@@ -16,7 +16,7 @@ AR	=	ar
 
 COVR	=	gcovr
 ############################
-SRC_FILES	=	\
+SRC_FILES	=	bsq.c\
 
 SRC	=	$(addprefix $(DIR), $(SRC_FILES))
 
@@ -52,7 +52,7 @@ tests_run:	unit_test
 	$(COVR) --exclude $(DIR_TEST) --branch
 
 clean:
-		$(RM) -f $(OBJ) $(MAIN_OBJ)
+		$(RM) -f $(OBJ) $(OBJ_MAIN)
 
 fclean: clean
 		$(RM) -f $(NAME)

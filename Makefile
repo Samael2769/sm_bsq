@@ -18,11 +18,13 @@ $(NAME): solving generating
 
 solving: sm_libc
 	$(CP) $(DIR_LIB)libsm_libc.a $(DIR_SOLVER)
+	$(CP) $(DIR_LIB)sm_libc.h $(DIR_SOLVER)/includes
 	$(MAKE) -sC $(DIR_SOLVER)
 	$(CP) $(DIR_SOLVER)$(NAME_SOLVER) ./
 
 generating: sm_libc
 	$(CP) $(DIR_LIB)libsm_libc.a $(DIR_GENERATOR)
+	$(CP) $(DIR_LIB)sm_libc.h $(DIR_GENERATOR)/includes
 	$(MAKE) -sC $(DIR_GENERATOR)
 	$(CP) $(DIR_GENERATOR)$(NAME_GENERATOR) ./
 

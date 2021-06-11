@@ -5,7 +5,13 @@
 ## Makefile
 ##
 
-SRC		=\
+SRC		=	sm_read_file.c\
+			sm_strtoarr.c\
+			sm_strlen.c\
+			sm_strcpy.c\
+			sm_strdup.c\
+			sm_strcmp.c\
+			sm_putstr.c\
 
 OBJ		=		$(SRC:c=o)
 
