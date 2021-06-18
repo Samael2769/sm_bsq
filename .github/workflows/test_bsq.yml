@@ -1,0 +1,42 @@
+name: test_bsq
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  unit_tests:
+    name: unit_tests
+    container: epitechcontent/epitest-docker
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+
+    - name: make
+      run: make
+
+    - name: unitest
+      run: echo tests
+
+  bash_test:
+    container: epitechcontent/epitest-docker
+  
+    name: bash_test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+
+    - name: make
+      run: make
+
+    - name: tests_bsq
+      run: ./solver/tests/test_bsq.sh
+    
+    - name: test_gen
+      run: ./generator/tests/test_generator.sh

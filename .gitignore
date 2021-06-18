@@ -1,4 +1,3 @@
 *.o
 *.a
 *.gc*
-solver/maps/

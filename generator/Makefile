@@ -16,7 +16,7 @@ AR	=	ar
 
 COVR	=	gcovr
 ############################
-SRC_FILES	=	\
+SRC_FILES	=	map_generator.c\
 
 SRC	=	$(addprefix $(DIR), $(SRC_FILES))
 
@@ -46,7 +46,7 @@ $(TEST_NAME):
 	$(LDLIBS) += --coverage -lcriterion
 	$(CC) -o $(TEST_NAME) $(SRC) $(SRC_TEST) $(LDFLAGS) $(LDLIBS)
 
-tests_run:	unit_test
+tests_run:	$(TEST_NAME)
 	./$(TEST_NAME)
 	$(COVR) --exclude $(DIR_TEST)
 	$(COVR) --exclude $(DIR_TEST) --branch

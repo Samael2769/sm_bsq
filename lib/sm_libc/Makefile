@@ -6,12 +6,19 @@
 ##
 
 SRC		=	sm_read_file.c\
-			sm_strtoarr.c\
+			sm_bsqstrtoarr.c\
 			sm_strlen.c\
 			sm_strcpy.c\
 			sm_strdup.c\
 			sm_strcmp.c\
 			sm_putstr.c\
+			sm_tablen.c\
+			sm_puttab.c\
+			sm_freetab.c\
+			sm_atoi.c\
+			sm_itoa.c\
+			sm_calloc.c\
+			sm_strconcat.c\
 
 OBJ		=		$(SRC:c=o)
 

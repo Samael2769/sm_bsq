@@ -17,6 +17,9 @@ AR	=	ar
 COVR	=	gcovr
 ############################
 SRC_FILES	=	bsq.c\
+				get_size.c\
+				error_handling.c\
+				find_square.c\
 
 SRC	=	$(addprefix $(DIR), $(SRC_FILES))
 
@@ -46,7 +49,7 @@ $(TEST_NAME):
 	$(LDLIBS) += --coverage -lcriterion
 	$(CC) -o $(TEST_NAME) $(SRC) $(SRC_TEST) $(LDFLAGS) $(LDLIBS)
 
-tests_run:	unit_test
+tests_run:	$(TEST_NAME)
 	./$(TEST_NAME)
 	$(COVR) --exclude $(DIR_TEST)
 	$(COVR) --exclude $(DIR_TEST) --branch
