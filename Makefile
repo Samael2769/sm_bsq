@@ -42,9 +42,9 @@ fclean:
 	$(MAKE) -sC $(DIR_LIB) fclean
 	$(RM) $(NAME_SOLVER) $(NAME_GENERATOR) $(DIR_GENERATOR)libsm_libc.a $(DIR_SOLVER)libsm_libc.a
 
-tests_run:
-	$(MAKE) -sC $(DIR_SOLVER) tests_run
+tests_run: solving generating 
 	$(MAKE) -sC $(DIR_LIB) tests_run
-	$(MAKE) -sC $(DIR_GENERATOR) tests_run
+	$(MAKE) -sC $(DIR_SOLVER) tests_run
+	$(MAKE) -C $(DIR_GENERATOR) tests_run
 
 re: fclean all

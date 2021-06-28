@@ -10,6 +10,8 @@ LDFLAGS	= -L.
 
 LDLIBS		=	-lsm_libc
 
+TEST_LIBS 	= --coverage -lcriterion
+
 CC	=	gcc
 
 AR	=	ar
@@ -31,9 +33,9 @@ SRC_MAIN	=	$(addprefix $(DIR), $(SRC_FILES_MAIN))
 
 OBJ_MAIN	=	$(SRC_MAIN:.c=.o)
 ############################
-SRC_FILE_TEST	=	\
+SRC_FILE_TEST	=	test_bsq.c\
 
-SRC_TEST	=	$(addprefix $(DIR_TEST), $(SRC_FILES_TEST))
+SRC_TEST	=	$(addprefix $(DIR_TEST), $(SRC_FILE_TEST))
 ############################
 
 NAME	=	bsq
@@ -45,9 +47,8 @@ all: $(NAME)
 $(NAME): $(OBJ) $(OBJ_MAIN)
 	$(CC) -o $(NAME) $(OBJ) $(OBJ_MAIN) $(LDFLAGS) $(LDLIBS)
 
-$(TEST_NAME):
-	$(LDLIBS) += --coverage -lcriterion
-	$(CC) -o $(TEST_NAME) $(SRC) $(SRC_TEST) $(LDFLAGS) $(LDLIBS)
+$(TEST_NAME): fclean
+	$(CC) -o $(TEST_NAME) $(SRC) $(SRC_TEST) $(LDFLAGS) $(LDLIBS) $(TEST_LIBS) $(CFLAGS) $(CPPFLAGS)
 
 tests_run:	$(TEST_NAME)
 	./$(TEST_NAME)

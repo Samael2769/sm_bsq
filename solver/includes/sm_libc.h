@@ -23,5 +23,6 @@ int sm_atoi(char *str);
 char *sm_itoa(int nb);
 char *sm_strconcat(char *dest, char const *src);
 void *sm_calloc(size_t nmemb, size_t size);
+int sm_count_char(char *str, char c);
 
 #endif /* !SM_LIBC_H_ */

@@ -21,6 +21,8 @@ int bsq(char const *filepath)
     size.y = get_cols(stream);
     size.x = get_rows(stream);
     stream = set_map(stream);
+    if (error_handling(stream, size) != 0)
+        return -1;
     map = sm_bsqstrtoarr(stream, size.x, size.y);
     find_square(map, size);
     return 0;

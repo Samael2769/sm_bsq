@@ -19,6 +19,7 @@ SRC		=	sm_read_file.c\
 			sm_itoa.c\
 			sm_calloc.c\
 			sm_strconcat.c\
+			sm_count_char.c\
 
 OBJ		=		$(SRC:c=o)
 
@@ -62,6 +63,7 @@ fclean: clean
 		$(RM) -f $(TEST_NAME)
 
 unit_test: fclean $(NAME)
+	touch $(OBJ_TEST)
 	gcc -o $(TEST_NAME) $(SRC) $(OBJ_TEST) $(LDLIBS)
 
 tests_run:	unit_test
