@@ -20,7 +20,7 @@ jobs:
       run: make
 
     - name: unitest
-      run: echo tests
+      run: make tests_run
 
   bash_test:
     container: epitechcontent/epitest-docker
