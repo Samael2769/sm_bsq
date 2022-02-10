@@ -21,7 +21,7 @@ SRC		=	sm_read_file.c\
 			sm_strconcat.c\
 			sm_count_char.c\
 
-OBJ		=		$(SRC:c=o)
+OBJ		=		$(SRC:.c=.o)
 
 NAME	=		libsm_libc.a
 
